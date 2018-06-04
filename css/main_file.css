@@ -1,0 +1,50 @@
+@import url("css_reset.css");
+
+body {
+    /*background: #adebad;*/
+    /*padding: 20px;*/
+}
+
+#header_m {
+	padding: 5px;
+	background: #00ccff;
+	text-align: conter;
+}
+
+#content {
+	padding: 20px;
+	text-align: center;
+}
+
+#footer_m {
+	padding: 1px;
+	background: #4080bf;
+	color: #ffffff;
+	text-align: center;
+}
+#catalog_header {
+    text-align: center;
+    background-color: #00ccff;
+    overflow: auto;
+}
+ul#header_links {
+	list-style-type: none;
+}
+li {
+	display: inline;
+	font-size: 20px;
+	margin-right: 15px;
+}
+a {
+	text-decoration: none;
+}
+#login_box {
+	width: 300px;
+	background-color: #0066cc;
+	color: #ffffff;
+	margin: auto;
+	padding-left: 10px;
+	overflow: auto;
+	margin-bottom: 10px;
+	text-align: left;
+}

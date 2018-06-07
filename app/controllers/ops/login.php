@@ -14,6 +14,8 @@
 			redirect('main/login/'.$username,'Wrong Password!');
 		}
 	//Login Succeeded
+		//session_start();
 		$_SESSION['authuid'] = $user->get('id');
 		redirect('main', 'Login Successful!');
+		
 	}

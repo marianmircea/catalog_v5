@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div id = "wrap">
-			<div id = "header_m"><h1>CN Ion Creanga Bistrita - Catalog online</h1></div>
+			<div id = "header"><h6>CN Ion Creanga Bistrita - Catalog online</h6></div>
 			<div id = "nav">
 			<ul>
 				<li><a href="<?php echo myUrl('main')?>">Main</a></li>
@@ -26,8 +26,8 @@
 <?php
 	if ($authuid)
 		echo '<li><a href="'.myUrl('ops/logout').'">Logout</a></li>'."\n";
-	else
-		echo '<li><a href="'.myUrl('main/login').'">Login</a></li>'."\n";
+		else
+			echo '<li><a href="'.myUrl('main/login').'">Login</a></li>'."\n";
 ?>
 			</ul>
 			</div>

@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script type = "text/javascript">
 	function validateForm(f) {
 		if (f.username.value == "") {
 			alert("Please enter a username");

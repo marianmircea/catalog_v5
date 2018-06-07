@@ -51,7 +51,7 @@ abstract class KISS_Controller {
     require($controllerfile);
     if (!function_exists($function))
       $this->request_not_found('Function not found: '.$function);
-    call_user_func_array($function,$this->params);
+    call_user_func_array($function, $this->params);
     return $this;
   }
 
@@ -162,7 +162,7 @@ function getdbh() {
 		public $rs = array(); // for holding all object property variables
 
 		//function __construct($pkname='', $tablename='', $dbhfnname='getdbh', $quote_style='MYSQL', $compress_array = true) {
-		function __construct($pkname='', $tablename='', $dbhfnname='getdbh', $quote_style='MYSQL', $compress_array = true) {
+		function __construct($pkname='id', $tablename='users', $dbhfnname='login_system', $quote_style='MYSQL', $compress_array = true) {
 			$this->pkname = $pkname; //Name of auto-incremented Primary Key
 			$this->tablename = $tablename; //Corresponding table in database
 			$this->dbhfnname = $dbhfnname; //dbh function name
@@ -235,9 +235,9 @@ function getdbh() {
 	  //Inserts record into database with a new auto-incremented primary key
 	  //If the primary key is empty, then the PK column should have been set to auto increment
 	  function create() {
-		$dbh=$this->getdbh();
-		$pkname=$this->pkname;
-		$s1=$s2='';
+		$dbh = $this->getdbh();
+		$pkname = $this->pkname;
+		$s1 = $s2='';
 		foreach ($this->rs as $k => $v)
 		  if ($k!=$pkname || $v) {
 			$s1 .= ','.$this->enquote($k);

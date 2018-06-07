@@ -1,21 +1,14 @@
-@import url("css_reset.css");
-
-body {
-    /*background: #adebad;*/
-    /*padding: 20px;*/
-}
-
-#header_m {
-	padding: 5px;
-	background: #00ccff;
-	text-align: conter;
-}
-
 #content {
 	padding: 20px;
 	text-align: center;
 }
 
+#catalog_header {
+	text-align: center;
+	background-color: #00ccff;
+	overflow: auto;
+	font-size: 38px;
+}
 #footer_m {
 	padding: 1px;
 	background: #4080bf;

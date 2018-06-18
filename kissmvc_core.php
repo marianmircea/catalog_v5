@@ -160,7 +160,12 @@ function getdbh() {
 		protected $QUOTE_STYLE = 'MYSQL'; // valid types are MYSQL,MSSQL,ANSI
 		protected $COMPRESS_ARRAY = true;
 		public $rs = array(); // for holding all object property variables
-
+		
+		protected $servername;
+		protected $dbname;
+		protected $charset;
+		protected $username;
+		
 		//function __construct($pkname='', $tablename='', $dbhfnname='getdbh', $quote_style='MYSQL', $compress_array = true) {
 		function __construct($pkname='id', $tablename='users', $dbhfnname='login_system', $quote_style='MYSQL', $compress_array = true) {
 			$this->pkname = $pkname; //Name of auto-incremented Primary Key
@@ -188,26 +193,17 @@ function getdbh() {
 		return $this->set($key,$val);
 	  }
 
-	  function getdbh() {
-		return call_user_func($this->dbhfnname);
-	  }
-		
-		/*function getdbh() {
-			if (!isset($GLOBALS['dbh']))
-			try {
-			//$GLOBALS['dbh'] = new PDO('sqlite:'.APP_PATH.'db/dbname.sqlite');
-			$GLOBALS['dbh'] = new PDO('mysql:host = localhost; dbname = dbname', 'username', 'password');
-				} catch (PDOException $e) {
-			die('Connection failed: '.$e->getMessage());
-			}
-		return $GLOBALS['dbh'];
-	}
-		
+	  /*function getdbh() {
+		//return call_user_func($this->dbhfnname); //testeeeeeeeeeeeeeeeeeee
+		return call_user_func($this); //testeeeeeeeeeeeeeeeeeee
+		//return call_user_func('_login'); //nuuuuuuuuuuuuuuu
+	  }*/
+		//ok - merge functia getdbh() de mai jos ....................
 		function getdbh() {
 			$this -> servername = "localhost";
 			$this -> username = "root";
 			$this -> password = "";
-			$this -> dbname = "login_syste";
+			$this -> dbname = "login_system";
 			$this -> charset = "utf8mb4";
 			try {
 				$data_source_name = "mysql:host = ".$this->servername.";dbname=".$this->dbname.";charset=".$this->charset;
@@ -220,8 +216,7 @@ function getdbh() {
 			catch (PDOException $error) {
 				echo "Connection failed: ".$error->getMessage();
 			}
-		}*/
-		
+		}
 		
 	  protected function enquote($name) {
 		if ($this->QUOTE_STYLE=='MYSQL')

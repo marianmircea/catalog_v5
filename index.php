@@ -104,7 +104,7 @@ function custom_error($msg='') {
 	function getdbh() {
 		if (!isset($GLOBALS['dbh']))
 			try {
-      //$GLOBALS['dbh'] = new PDO('sqlite:'.APP_PATH.'db/dbname.sqlite');
+				//$GLOBALS['dbh'] = new PDO('sqlite:'.APP_PATH.'db/dbname.sqlite');
 				$dbname = "login_system";
 				$username = "root";
 				$password = "";

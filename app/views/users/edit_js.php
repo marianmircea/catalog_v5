@@ -1,14 +1,24 @@
 <script type = "text/javascript">
 	function validateForm(f) {
-		if (f.username.value == "") {
+		if (f.nume.value == "") {
 			alert("Please enter a username");
-			f.username.focus();
+			f.nume.focus();
 			return false;
 		}
-		if (f.password.value == "") {
+		if (f.prenume.value == "") {
+			alert("Va rog completati prenumele");
+			f.prenume.focus();
+			return false;
+		}
+		if (f.email.value == "") {
+			alert("Va rog completati adresa de mail");
+			f.email.focus();
+			return false;
+		}
+		if (f.user_pw.value == "") {
 			alert("Please enter a password");
-			f.password.focus();
-		return false;
+			f.user_pw.focus();
+			return false;
 		}
 		f.submit();
 	}

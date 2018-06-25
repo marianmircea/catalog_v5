@@ -160,7 +160,7 @@ function getdbh() {
 		protected $QUOTE_STYLE = 'MYSQL'; // valid types are MYSQL,MSSQL,ANSI
 		protected $COMPRESS_ARRAY = true;
 		public $rs = array(); // for holding all object property variables
-		
+		protected $password;
 		protected $servername;
 		protected $dbname;
 		protected $charset;
@@ -301,14 +301,14 @@ function getdbh() {
 		return count($result);
 	  }
 
-	  function merge($arr) {
-		if (!is_array($arr))
-		  return $this;
-		foreach ($arr as $key => $val)
-		  if (isset($this->rs[$key]))
-			$this->rs[$key] = $val;
-		return $this;
-	  }
+		function merge($arr) {
+			if (!is_array($arr))
+				return $this;
+			foreach ($arr as $key => $val)
+				if (isset($this->rs[$key]))
+					$this->rs[$key] = $val;
+			return $this;
+		}
 
 	  function retrieve_one($wherewhat='',$bindings='') {
 		$dbh = $this->getdbh();

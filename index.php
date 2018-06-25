@@ -17,6 +17,7 @@ error_reporting(E_ALL);
 //define('ABSPATH', dirname(__FILE__) . '/');
 
 define('APP_PATH','app/'); //with trailing slash pls
+define('APP_PATH2','D:\wamp\www\catalog_v5\app/views/'); //with trailing slash pls
 define('WEB_FOLDER','/catalog_v5/'); //with trailing slash pls
 
 //===============================================
@@ -59,9 +60,10 @@ $GLOBALS['pagination']['per_page'] = 5;
 set_exception_handler('uncaught_exception_handler');
 
 function uncaught_exception_handler($e) {
-  ob_end_clean(); //dump out remaining buffered text
-  $vars['message']=$e;
-  die(View::do_fetch(APP_PATH.'errors/exception_uncaught.php',$vars));
+	ob_end_clean(); //dump out remaining buffered text
+	$vars['message']=$e;
+	//die(View::do_fetch(APP_PATH.'errors/exception_uncaught.php',$vars));
+	die(View::do_fetch(APP_PATH2.'errors/exception_uncaught.php',$vars));
 }
 
 function custom_error($msg='') {

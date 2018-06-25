@@ -7,15 +7,22 @@
 				<td><input type = "text" name ="nume" style = "width:150px" value="<?php echo $user->get('nume')?>" /></td>
 			</tr>
 			<tr>
-				<td>Parola</td>
-				<td><input type = "text" name ="user_pw" style = "width:150px" value="<?php echo $user->get('user_pw')?>" /></td>
-			</tr>
-			<tr>
 				<td>Prenume</td>
 				<td><input type = "text" name ="prenume" style="width:150px" value="<?php echo $user->get('prenume')?>" /></td>
 			</tr>
 			<tr>
-				<td colspan ="2" style ="text-align:right"><input type = "button" value = "Submit" onclick = "validateForm(this.form); return false;" /></td>
+				<td>Email</td>
+				<td><input type = "text" name ="email" style="width:150px" value="<?php echo $user->get('email')?>" /></td>
 			</tr>
+			<tr>
+				<td>Parola</td>
+				<td><input type = "text" name ="user_pw" style = "width:150px" value="<?php echo $user->get('user_pw')?>" /></td>
+			</tr>
+			
+			<tr>
+				<td colspan ="2" style ="text-align:right">
+				<input type = "button" value = "Submit" onclick = "validateForm(this.form);return false;" /></td>
+			</tr>	
 		</table>
+		
 </form>

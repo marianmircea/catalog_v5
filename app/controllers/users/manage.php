@@ -1,6 +1,6 @@
 <?php
 	function _manage($n=0) {
-		require_login(); //verifica daca este setata sseiune, daca nu = redirect la pagina de logare
+		require_login(); //verifica daca este setata sseiune, daca nu, redirect la pagina de logare
 		$n = (int)$n;
 		$data['body'][] = '<h2>Manage Users</h2><br />';
 		_make_user_table($n, $data);
@@ -28,7 +28,7 @@
 		//$stmt = $dbh->query("SELECT * FROM \"users\" LIMIT $n,$limit"); --- originalll
 		$stmt = $dbh->query("SELECT * FROM users LIMIT $n, $limit");
 		//$tablearr[] = explode(',','uid,username,password,fullname,created_dt,Action');
-		$tablearr[] = explode(',','id, nume, prenume, email, user_id, PASS, Actions');
+		$tablearr[] = explode(',','id, nume, prenume, email, user_id, PASS, data crearii, Actions');
 		while ($rs = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$uid = $rs['id'];
 			$row = null;

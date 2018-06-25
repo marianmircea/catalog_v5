@@ -8,6 +8,7 @@
 			$this->rs['email'] = '';
 			$this->rs['user_id'] = '';
 			$this->rs['user_pw'] = '';
+			$this->rs['created_dt'] = '';
 			if ($id)
 				$this->retrieve($id);
 		}

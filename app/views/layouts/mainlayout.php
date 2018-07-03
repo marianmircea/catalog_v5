@@ -7,6 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?php echo $pagetitle?></title>
 		<style type="text/css">
 			@import "<?php echo myUrl('css/reset.css')?>";
@@ -22,7 +23,8 @@
 			<ul>
 				<li><a href="<?php echo myUrl('main')?>">Main</a></li>
 				<li><a href="<?php echo myUrl('users/manage')?>">Manage Users</a></li>
-				<li><a href="<?php echo myUrl('main/resetdb')?>">Reset User DB</a></li>
+				<!--<li><a href="<?php echo myUrl('main/resetdb')?>">Reset User DB</a></li>-->
+				<li><a href="<?php echo myUrl('users/add')?>">Inscrie-te</a></li>
 <?php
 	if ($authuid)
 		echo '<li><a href="'.myUrl('ops/logout').'">Logout</a></li>'."\n";
